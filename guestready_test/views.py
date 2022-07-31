@@ -12,7 +12,7 @@ def index(request):
 def populate_database():
     try:
         Rental.objects.get(id=1)
-    except OperationalError:
+    except Rental.DoesNotExist:
         ren1 = Rental.objects.create(name='rental-1')
         Reservation.objects.create(rental=ren1, checkin=datetime.date(2022, 1, 1), checkout=datetime.date(2022, 1, 13))
         Reservation.objects.create(rental=ren1, checkin=datetime.date(2022, 1, 20), checkout=datetime.date(2022, 2, 20))

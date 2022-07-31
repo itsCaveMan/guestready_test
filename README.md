@@ -32,6 +32,7 @@ This Django project is dedicated to the devs @ GuestReady.com as part of their i
 
 
 ## Spoilers
+![result](https://user-images.githubusercontent.com/51651537/182032388-068f6eaf-b17e-4fa9-aaaf-6dab995a14b1.png)
 
 
 

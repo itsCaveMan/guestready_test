@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guest Ready Test</title>
+
+</head>
+<body>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rental</th>
+            <th>Reservation</th>
+            <th>Check in</th>
+            <th>Check out</th>
+            <th>Previous res</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for rental in rentals %}
+            {% for reservation in rental.reservation_set.all %}
+              <tr>
+                <td>{{ rental.name }}</td>
+                <td>Res-{{ reservation.id }}</td>
+                <td>{{ reservation.checkin|date:"d-m-Y" }}</td>
+                <td>{{ reservation.checkout|date:"d-m-Y"  }}</td>
+                <td>Res-{{ reservation.previous_reservation.id }}</td>
+              </tr>
+            {% endfor %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+
+
+</body>
+</html>
